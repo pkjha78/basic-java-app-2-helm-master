@@ -1,0 +1,19 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:h2:file:~/docker-2-helm;AUTO_SERVER=TRUE
+    initialization-mode: always
+    platform: h2
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate.ddl-auto: create-drop
+    properties:
+      hibernate.jdbc.lob.non_contextual_creation: true
+keycloak:
+  auth-server-url: http://127.0.0.1:8081/auth/
+  resource: persons-app
+  realm: PersonRealm
+  public-client: true
+  principal-attribute: preferred_username      
